@@ -1,70 +1,23 @@
-# Getting Started with Create React App
+# 기본 구조
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+* node_modules/: 프로젝트에서 사용하는 npm 패키지들이 저장되는 디렉토리입니다.
 
-## Available Scripts
+* public/: 정적인 파일들이 위치하는 공간입니다. 이 디렉토리 안에 있는 파일들은 웹팩(Webpack)이나 바벨(Babel) 같은 빌드 도구에 의해 처리되지 않고 그대로 유지됩니다.
 
-In the project directory, you can run:
+* index.html: 웹 애플리케이션의 주요 HTML 파일입니다. 기본적으로 'root'라는 id를 가진 div 태그 하나를 포함합니다. 이 div는 React가 컴포넌트들을 렌더링하는 데 사용됩니다.
 
-### `npm start`
+* favicon.ico: 웹 사이트의 파비콘(즐겨찾기 아이콘)입니다.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+* manifest.json: 웹 앱 매니페스트는 웹 애플리케이션에 대한 정보를 제공하며, 주로 모바일 홈 화면에 추가할 때 사용합니다.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+* src/: 소스 파일들이 위치하는 디렉토리입니다. 주로 이 디렉토리 내에서 개발 작업을 합니다.
 
-### `npm test`
+* App.js: 기본 애플리케이션 컴포넌트가 정의된 파일입니다. 이 파일을 통해 다른 컴포넌트들을 import하여 사용합니다.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* index.js: 웹 애플리케이션의 시작점입니다. ReactDOM.render 함수를 이용하여 App 컴포넌트를 위에서 언급한 index.html의 root div에 연결합니다.
 
-### `npm run build`
+* index.css: 전역 스타일을 정의하는 CSS 파일입니다.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* App.css: App 컴포넌트에 대한 스타일을 정의하는 CSS 파일입니다.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* package.json: 프로젝트의 메타데이터를 저장하고 있는 파일입니다. 프로젝트에 사용된 npm 패키지들과 스크립트, 프로젝트의 버전 등을 포함합니다.
