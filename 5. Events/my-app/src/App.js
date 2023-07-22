@@ -3,7 +3,10 @@ import './App.css';
 
 function Header(props){
   return <header>
-      <h1><a href="/">{props.title}</a></h1>
+      <h1><a href="/" onClick={(event)=>{
+        event.preventDefault();
+        props.onChangeMode();
+      }}>{props.title}</a></h1>
     </header>
 }
 
@@ -12,7 +15,13 @@ function Nav(props){
   ];
   for(let i = 0; i < props.topics.length; i++){
     let t = props.topics[i];
-    lis.push(<li key={t.id}><a href={'/read/' + t.id}>{t.title}</a></li>)
+    lis.push(<li key={t.id}>
+      <a id={t.id} href={'/read/' + t.id}
+      onClick={event=>{
+        event.preventDefault();
+        props.onChangeMode(event.target.id);
+      }}>{t.title}</a>
+      </li>)
   }
   return <nav>
     <ol>
@@ -36,8 +45,12 @@ function App() {
   ]
   return (
     <div>
-      <Header title="REACT"></Header>
-      <Nav topics={topics}></Nav>
+      <Header title="REACT" onChangeMode={()=>{
+        alert('hi header');
+      }}></Header>
+      <Nav topics={topics} onChangeMode={(id)=>{
+        alert(id)
+      }}></Nav>
       <Article title="Welcome" body="Hello, WEB"></Article>
       <Article title="호호" body="바디"></Article>
     </div>
