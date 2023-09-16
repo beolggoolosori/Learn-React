@@ -1,7 +1,7 @@
 # Learn React
 React 공식문서 개인 스터디
 
-react.dev
+[react.dev/learn](https://react.dev/learn)
 
 
 ```
