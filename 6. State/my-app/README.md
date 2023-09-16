@@ -1,70 +1,15 @@
-# Getting Started with Create React App
+# 리액트에서의 state
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+리액트(React)에서 state는 컴포넌트의 라이프타임 동안 데이터를 저장하고 변경할 수 있는 객체입니다. state는 컴포넌트 내부에서만 접근 및 업데이트가 가능하며, 이를 사용하여 사용자와의 상호작용 또는 시간에 따른 데이터 변경에 반응하여 UI를 동적으로 업데이트합니다.
 
-## Available Scripts
+## state의 주요 특징
 
-In the project directory, you can run:
+로컬 및 캡슐화: 각 컴포넌트에는 고유한 state가 있습니다. 한 컴포넌트의 state를 직접적으로 다른 컴포넌트에서 수정하거나 접근할 수 없습니다.
 
-### `npm start`
+비동기적 업데이트: setState를 사용하여 state를 업데이트하면 리액트는 해당 변경을 예약하고, 성능 최적화를 위해 여러 setState 호출을 한 번에 처리할 수 있습니다. 이로 인해 state의 업데이트는 비동기적으로 발생하며, 이를 고려하여 로직을 작성해야 합니다.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+업데이트: state는 직접 수정되면 안 됩니다. 대신, 클래스 컴포넌트에서는 this.setState()를, 함수형 컴포넌트에서는 useState에서 반환된 설정 함수(위 예제에서는 setCount)를 사용하여 업데이트합니다.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+읽기: state의 값을 읽을 때는, 클래스 컴포넌트에서는 this.state.keyName으로, 함수형 컴포넌트에서는 useState에서 반환된 변수 (위 예제에서는 count)를 사용하여 접근합니다.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+state를 사용하면 사용자 상호작용, API 응답 또는 시간 경과와 같은 변경 가능한 정보에 응답하여 컴포넌트의 출력을 업데이트할 수 있습니다. 그러나 상태 관리가 복잡해지면, Redux나 Context API와 같은 상태 관리 도구를 고려할 수 있습니다.

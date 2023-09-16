@@ -1,70 +1,39 @@
-# Getting Started with Create React App
+# Component란 무엇인가?
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+컴포넌트는 React 앱의 구성 요소로, UI의 독립적인 재사용 가능한 부분을 나타냅니다. 이를 통해 복잡한 UI를 작은 단위로 분리하고 관리할 수 있습니다.
 
-## Available Scripts
+## 컴포넌트의 특징
 
-In the project directory, you can run:
+1. 재사용성: 컴포넌트는 일반적으로 재사용 가능합니다. 예를 들어, 동일한 버튼 디자인이 여러 페이지에서 사용되어야 한다면 해당 버튼을 컴포넌트로 만들고 필요한 곳에서 여러 번 사용할 수 있습니다.
 
-### `npm start`
+2. 독립성: 각 컴포넌트는 독립적으로 동작해야 합니다. 그래서 다른 컴포넌트에 대한 의존도를 최소화하며, 각각의 상태와 로직을 내부에 캡슐화해야 합니다.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+3. 모듈성: 컴포넌트는 앱의 다른 부분과 쉽게 통합되거나 교체될 수 있어야 합니다.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+4. 명확성: 각 컴포넌트는 그 자체로 명확하게 이해될 수 있어야 합니다.
 
-### `npm test`
+## 컴포넌트의 종류
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 함수형 컴포넌트 (Functional Components)
 
-### `npm run build`
+ES6의 화살표 함수와 함께 사용되는 간단하고 상태를 포함하지 않는 컴포넌트입니다. React Hooks의 도입으로 인해 함수형 컴포넌트에서도 상태와 생명주기 메서드를 사용할 수 있게 되었습니다.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```jsx
+function Welcome(props) {
+  return <h1>Hello, {props.name}</h1>;
+}
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 클래스 컴포넌트 (Class Components)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+ES6의 클래스를 사용하여 정의되며, 내부 상태와 생명주기 메서드를 포함할 수 있습니다.
 
-### `npm run eject`
+```jsx
+class Welcome extends React.Component {
+  render() {
+    return <h1>Hello, {this.props.name}</h1>;
+  }
+}
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+이렇게 정의된 컴포넌트는 앱의 다른 부분에서 사용될 수 있으며, props나 state의 변화에 따라 UI를 자동으로 업데이트합니다.
